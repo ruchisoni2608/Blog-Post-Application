@@ -1,0 +1,128 @@
+
+[1].Authentication:
+
+1.User Registration:
+
+Verify that a user with a role of "user" can register successfully.
+Confirm that required validation rules (e.g., unique email, password length) are enforced.
+Ensure that the user is assigned the correct default role upon registration.
+
+2.Admin Registration:
+
+Test that an admin user & super admin can register successfully.
+Validate that admin-specific fields (if any) are correctly handled during registration.
+
+3.Login:
+
+Confirm that a registered user can log in successfully.
+Ensure that login is role-specific, i.e., users can only log in as their assigned role.
+Validate that login fails with incorrect credentials.
+
+4.Logout:
+
+Check that a logged-in user can log out successfully.
+Ensure that after logging out, the user is redirected to the appropriate page (e.g., login page).
+
+[2].Profile Management:
+
+1.View Profile:
+
+Verify that a user can view their profile after logging in.
+Ensure that an admin user can view their own profile as well.
+
+2.Edit Profile:
+
+Test that a user can edit their profile information.
+Confirm that admin users can edit their profiles too.
+Validate that the changes made to the profile are reflected in the database.
+
+[3]Authorization:
+
+Access Control:
+
+Regular user cannot access admin-specific routes (e.g., admin dashboard).
+Middleware:
+
+Ensure that the middleware correctly restricts access to certain routes based on the user's role.
+Test that unauthorized users are redirected to the appropriate login page.
+
+Password Reset:
+
+Verify that the password reset functionality works for both user and admin roles.
+Confirm that the password is reset successfully and the user can log in with the new password.
+----------------------------------------------------------------------------------------------------------------------------
+create User module and a functionality where separate users can create posts, and then interact with these posts by commenting,Nested replying, and tagging.
+
+[4]Post Module Test Cases:
+
+1. Creating a Post:
+
+Verify that a user can create a post successfully.
+Confirm that the post is saved to the database with the correct user association.
+Validate that required fields (e.g., title, content) are enforced.
+User submits the post.
+Verify that the post is successfully created and is visible on the post list page.
+
+2. Viewing a Post:
+
+A user can view the details of a specific post.
+User clicks on a post from the post list.[show post that specific post]
+Verify that the post details page is displayed.
+
+3. Adding a Comment:
+
+A user can add a comment to a post. 
+User enters a comment in the comment section.
+User submits the comment.
+Verify that the comment is successfully added and is visible on the post details page & associated with the correct post and user.
+
+4. Replying to a Comment:
+A user can reply to an existing comment on a post.
+User navigates to the post details page.
+User clicks on the "Reply" button next to a comment.
+User enters a reply in the reply section.
+User submits the reply.
+Verify that the reply is successfully added and is visible under the original comment.
+
+5. Tagging a Post:
+A user can add tags to a post.
+User navigates to the post details page.
+User enters one or more tags in the tag section.
+User submits the tags.
+Verify that the tags are successfully added and are visible on the post details page.
+
+6. Deleting a Post:
+Scenario: A user wants to delete one of their posts.
+Test Case:
+User navigates to the post details page of their own post.
+User clicks on the "Delete" button.
+Confirm the deletion.
+Verify that the post is no longer visible on the post list page.
+
+7. Editing a Post:
+Scenario: A user wants to edit the content of one of their posts.
+Test Case:
+User navigates to the post details page of their own post.
+User clicks on the "Edit" button.
+User modifies the content.
+User submits the changes.
+Verify that the post content is updated and is visible on the post details page.
+
+8.Delete Comment/Reply:
+
+Test that a user can delete their own comments and replies.
+Confirm that the comment or reply is removed from the database.
+
+9.Additional cases:
+Permissions:
+
+Ensure that users cannot edit or delete posts/comments/replies that do not belong to them.
+
+Notification System:
+
+Test the notification system for new comments and replies.
+Confirm that users receive notifications for interactions on their posts and comments.
+
+10.All post & Personal post page
+
+For own posts view there is personal post page and for commenting and replying there is Posts page.
